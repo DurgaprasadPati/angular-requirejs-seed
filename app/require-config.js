@@ -21,11 +21,17 @@ require.config({
 		angular: 'bower_components/angular/angular',
 		angularRoute: 'bower_components/angular-route/angular-route',
 		angularMocks: 'bower_components/angular-mocks/angular-mocks',
-		text: 'bower_components/requirejs-text/text'
+		text: 'bower_components/requirejs-text/text',
+        jquery:'bower_components/jquery/jquery.min',
+        bootstrap:'bower_components/bootstrap/dist/js/bootstrap'
 	},
 	shim: {
 		'angular' : {'exports' : 'angular'},
 		'angularRoute': ['angular'],
+        'jquery':{'exports':'jquery'},
+        'bootstrap':{
+            deps:['jquery']
+        },
 		'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'
@@ -36,13 +42,14 @@ require.config({
 	],
 	deps: window.__karma__ ? allTestFiles : [],
 	callback: window.__karma__ ? window.__karma__.start : null,
-	baseUrl: window.__karma__ ? '/base/app' : '',
+	baseUrl: window.__karma__ ? '/base/app' : ''
 });
 
 require([
 	'angular',
+    'bootstrap',
 	'app'
-	], function(angular, app) {
+	], function(angular,bootstrap, app) {
 		var $html = angular.element(document.getElementsByTagName('html')[0]);
 		angular.element().ready(function() {
 			// bootstrap the app manually
