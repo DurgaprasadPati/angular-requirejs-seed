@@ -1,9 +1,6 @@
-<div>
-    <p class="">
-        sdfsdfsdfdsfsds
-        sdfsdfsdf
-        sdfsdfsdf
-
-
-    </p>
+<div class="container" ng-repeat="module in contentDirective.modules ">
+       <div class=" " ng-if="module.type=='content'">
+           <h4>{{module.title}}</h4>
+           <p>{{module.subtitle}}</p>
+   </div>
 </div>

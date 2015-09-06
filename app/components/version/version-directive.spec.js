@@ -1,8 +1,8 @@
 /* global describe, it, expect, beforeEach, afterEach, module, inject */
-'use strict';
 
 define(['app', 'angularMocks'], function(app) {
 	describe('myApp.version module', function() {
+        'use strict';
 		beforeEach(module('myApp.version'));
 
 		describe('app-version directive', function() {

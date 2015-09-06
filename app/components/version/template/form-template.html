@@ -1,7 +1,7 @@
 <div>
     <div class="container">
         <div class="row">
-            <form role="form">
+            <form role="form" ng-submit="formDirective.submit()">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="InputName">Enter Name</label>
@@ -27,7 +27,7 @@
                             <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
                         </div>
                     </div>
-                    <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+                    <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-left">
                 </div>
             </form>
         </div>

@@ -1,9 +1,9 @@
 /* global describe, it, expect, beforeEach, afterEach, module, inject */
-'use strict';
+
 
 define(['app', 'angularMocks'], function(app) {
 	describe('myApp.view1 module', function() {
-
+        'use strict';
 		beforeEach(module('myApp.view1'));
 
 		describe('view1 controller', function() {

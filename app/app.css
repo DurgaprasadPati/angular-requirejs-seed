@@ -32,3 +32,17 @@
 [ng-cloak] {
     display: none;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    /*width: 90%;*/
+    /* Set the fixed height of the footer here */
+    height: 10%;
+    background-color: #f5f5f5;
+}
+.splash{
+    background-image: url(assets/images/splash.jpg);
+    height: 70%;
+    width: 70%;
+    background-repeat: no-repeat;
+}

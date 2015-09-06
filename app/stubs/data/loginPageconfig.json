@@ -1,12 +1,16 @@
 {
   "general": {
     "logo": "assets/images/logo.png",
-    "name" : "tiwaribrijendra.com"
+    "name" : "Cool Appz"
   },
   "navigation": [
     {
       "title": "Home",
       "link": "index.html"
+    },
+    {
+      "title": "About US",
+      "link": "aboutUs.html"
     },
     {
       "title": "Products",

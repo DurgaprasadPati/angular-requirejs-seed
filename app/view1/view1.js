@@ -1,8 +1,8 @@
-'use strict';
 define([
     'angular',
     'angularRoute'
 ], function(angular) {
+    'use strict';
     angular.module('myApp.view1', ['ngRoute'])
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.when('/view1', {
@@ -10,16 +10,20 @@ define([
                 controller: 'View1Ctrl'
             });
         }])
-        .controller('View1Ctrl',['$scope','$log','loadPageData','$q',function($scope, $log,loadPageData,$q) {
+        .controller('View1Ctrl',['$scope','$log','loadPageData','$q','$compile',function($scope, $log,loadPageData,$q, $compile) {
             $log.log("inside the service");
             loadPageData.promiseToHaveData().then(function(data){
                     $log.log("loding json");
                     $scope.pageData=data;
-                    //$log.log($scope.pageData);
+                    $log.log($scope.pageData);
+                    $log.log($scope.pageData.navigation);
                 },
-                function(data){
+                function(response){
                     $log.log("unable to load json");
                 });
+            $scope.submit = function(){
+              alert("submit successful");
+            };
         }])
         .service('loadPageData', ['$http','$log','$q' , function($http,$log,$q) {
             this.promiseToHaveData = function() {
@@ -34,7 +38,7 @@ define([
                     });
 
                 return defer.promise;
-            }
+            };
         }]);
 });
 
